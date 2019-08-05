@@ -1,0 +1,234 @@
+.portfolio{
+    display: flex;
+    flex-wrap: wrap;
+    background: #000;
+    min-height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+h2{
+    font-size: 36px;
+    font-weight: 500;
+}
+.portfolio__item iframe{
+    height: 320px;
+}
+.codepen{
+    height: 476px; 
+    box-sizing: border-box; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 1em 0; 
+    padding: 1em;
+}
+iframe{
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+}
+.fifth--work iframe{
+    display: none;
+}
+.portfolio__item img{
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #666666; 
+}
+.portfolio__item span{
+    font-weight: 200;
+    font-style: italic;
+}
+.portfolio__item span:before{
+    content:"<";
+    display: inline-block;
+    margin-right: 5px;
+}
+.portfolio__item span:after{
+    content:"/>";
+    display: inline-block;
+    margin-left: 5px;
+}
+.portfolio__item h3{
+    font-size: 22px;
+    margin-top: 10px;
+    width: 200px;
+}
+.portfolio__item h3:before{
+    content:"";
+    display: inline-block;
+    position: relative;
+    top: -7px;
+    background: #fff;
+    width: 20px;
+    height: 3px;
+    margin-right: 5px;
+}
+.portfolio__item a{
+    display: block;
+    position: relative;
+    background: #fff;
+    color: #000;
+    width: max-content;
+    font-size: 20px;
+    margin-top: 15px;
+    padding: 0 40px 0 10px;
+    transition: .5s;
+    text-decoration: none;
+}
+.portfolio__item a::after{
+    content: ">>";
+    display: inline;
+    position: absolute;
+    margin-left: 5px;
+    text-decoration: none;
+}
+.portfolio__item a:hover::after{
+    animation: go infinite .5s  ease ;
+}
+@keyframes go {
+    0% {margin-left: 5px;}
+    60% {margin-left: 15px;}
+    100% {margin-left: 5px;}
+}
+
+.portfolio__list--work{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+}
+.portfolio__list--work li{
+    margin: 15px 0;
+}
+.portfolio__list--tools{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+.portfolio__list--tools li{
+    padding: 20px;
+    font-size: 60px;
+    transition: .3s easy;
+}
+.html:hover{
+    color: #ef6331;
+}
+.css:hover{
+    color: #254bdd;
+}
+.js:hover{
+    color: #efd81d;
+}
+.react:hover{
+    color: #5ed3f3;
+}
+.adobe:hover{
+    color: #e61b23;
+}
+
+@media screen and (min-width: 667px) {
+    .portfolio__list--work li{
+        margin: 15px 15px;
+    }
+}
+
+@media  screen and (min-width: 1024px){
+    .portfolio{
+        justify-content: space-around;
+    }
+    .portfolio__works{
+        max-width: 700px;
+    }
+    .portfolio__descr{
+        max-width: 150px;
+        display: flex;
+        flex-direction: column;
+    } 
+}
+
+@media (min-width: 1200px){
+    .portfolio{
+        position: relative;
+        height: 230vh;
+        display: block;
+    }
+    .portfolio__works{
+        height: 220vh;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .portfolio__works h2{
+        top: 3vh;
+        position: absolute;
+    }
+    .portfolio__list--work{
+        display: block;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+    .portfolio__item{
+        position: absolute;
+    }
+    .firs--work{
+        width: 50%;
+        right: 0;
+    }
+    .firs--work iframe{
+        height: 50vh;
+    }
+    .second--work{
+        top: 20vh;
+        width: 45%;
+    }
+    .second--work iframe{
+        height: 60vh;
+    }
+    .third--work{
+        top: 70vh;
+        width: 50%;
+        right: 0;
+    }
+    .third--work iframe{
+        height: 40vh;
+    }
+    .fourth--work{
+        top: 98vh;
+        left: 5%;
+        width: 35%;
+    }
+    .fourth--work iframe{
+        height: 60vh;
+    }
+    .fifth--work{
+        top: 126vh;
+        right: 0;
+        width: 55%;
+    }
+    .fifth--work iframe{
+        display: block;
+        height: 60vh;
+    }
+    .fifth--work img{
+        display: none;
+    }
+    .portfolio__descr {
+        position: absolute;
+        left: 15%;
+        top: 175vh;
+        max-width: 400px;
+        align-items: center;
+    }
+    .portfolio__list--tools li{
+        padding: 2vh;
+        font-size: 12vh;
+    }
+}

@@ -1,0 +1,63 @@
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    font-size:36px;
+    font-weight:bold;
+    width:100wh;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    opacity: 1;
+  }
+  
+  .flip {
+    height:50px;
+    overflow:hidden;
+  }
+  
+  .flip > div > div {
+    padding:4px 12px;
+    height:45px;
+    margin-bottom:45px;
+    display:inline-block;
+  }
+  
+  .first div:first-child {
+    margin-top:20px;
+    text-transform: uppercase;
+    animation: firstShow 2s linear;
+  }
+  .second div:first-child {
+    margin-top:20px;
+    text-transform: uppercase;
+    animation: secondShow 2s linear;
+  }
+  .third div:first-child {
+    margin-top:20px;
+    animation: ThirdShow 2s linear;
+  }
+  
+  @keyframes firstShow {
+    0% {margin-top:20px;}
+    20%, 85% {margin-top:0px;}
+    90% {margin-top:20px;}
+  }
+  @keyframes secondShow {
+    0%, 20% {margin-top:20px;}
+    40%, 85% {margin-top:0px;}
+    90% {margin-top:20px;}
+  }
+  @keyframes ThirdShow {
+    0%, 40% {margin-top:20px;}
+    60%, 85% {margin-top:0px;}
+    90% {margin-top:20px;}
+  }
+
+  @media screen and (min-width: 769px) {
+    .loading {
+      flex-direction: row;
+    }
+  }

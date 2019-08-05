@@ -1,0 +1,210 @@
+.menu{
+  height: 90px;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+.menu #burger:checked{
+  cursor: none;
+}
+#burger:checked~#mouse{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: .8;
+  transform: translateX(-20px) translateY(-20px);
+}
+.menu__logo{
+  position: absolute;
+  width: 70px;
+  top: 5%;
+  left: 5%;
+}
+
+/*burger*/
+
+#burger{
+  display:none; /*checkbox hidden*/
+}
+#burger+.menu__burger {
+  position: fixed;
+  height: 20px;
+  width: 15px;
+  z-index: 3;
+  right: 5%;;
+  top: 5%;
+}
+#burger+.menu__burger span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  left: 0;
+  display: block;
+  background: #747474;
+  transition: .3s;
+}
+#burger+.menu__burger span:first-child {
+  top: 3px;
+}
+#burger+.menu__burger span:last-child {
+  top: 16px;
+}
+#burger:checked+.menu__burger span {
+  opacity: 0;
+  top: 50%;
+}
+#burger:checked+.menu__burger span:first-child {
+  opacity: 1;
+  transform: rotate(45deg);
+  background: #fff;
+}
+#burger:checked+.menu__burger span:last-child {
+  opacity: 1;
+  transform: rotate(-45deg);
+  background: #fff;
+}
+.menu__burger:hover {
+  cursor: pointer;
+}
+#burger:checked~.menu__burger:hover {
+  cursor: none;
+}
+
+
+/*nav*/
+
+#burger~.bg {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-1px);
+  z-index: 1;
+  transition: .5s;
+  transition-delay: .5s;
+  overflow: hidden;
+}
+#burger:checked~.bg {
+  height: 101%;
+  transition-delay: 0s;
+}
+.menu__list{
+  text-align: center;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  opacity: 0;
+  transition: .5s;
+  transition-delay: 0s;
+  z-index: -1;
+}
+
+#burger:checked~.menu__list{
+  opacity: 1;
+  transition-delay: .5s;
+  z-index: 3;
+}
+.menu__list a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-family: sans-serif;
+  display: block;
+  padding: 30px;
+  position: relative;
+  cursor: none;
+}
+.menu__list a:after{
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px;
+  transition: 0.5s all ease;
+  position: absolute;
+  z-index: 3;
+}
+.menu__list a:hover:after{
+  width: 100%;
+}
+
+/*social*/
+
+.social__list{
+  font-size: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  display: inline-flex;
+  z-index: -1;
+  transition: opacity .5s;
+  transition-delay: .5s;
+}
+#burger:checked~.social__list{
+  position: fixed;
+  top: 87%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  opacity: 1;
+  transition-delay: .5s;
+  z-index: 3;
+}
+.social__list li{
+  display: inline-block;
+  width: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.social__list a{
+  position: absolute;  
+  color: white;
+  cursor: none;
+}
+.social__list a:hover{
+  font-size: 26px;
+  transition: .15s;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .menu {
+    height: 110px;
+  }
+  #burger+.menu__burger {
+    width: 35px;
+    height: 30px;
+  }
+  #burger+.menu__burger span:last-child {
+    top: 26px;
+  }
+  #burger:checked+.menu__burger span:last-child {
+    top: 16px;
+  }
+  .menu__list a {
+    font-size: 32px;
+  }
+  .social__list{
+    font-size: 30px;
+  }
+  .social__list li{
+    width: 70px;
+  }
+  .social__list a:hover{
+    font-size: 36px;
+  }
+}

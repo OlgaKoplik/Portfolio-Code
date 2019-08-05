@@ -1,0 +1,125 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact h2{
+    margin: 50px 0 10px 0;
+}
+.contact p{
+    line-height: 1.6em;
+}
+.contact p span{
+    font-size: 18px;
+}
+.contact p span:after{
+    content:'';
+    display: block;
+    width: 150px;
+    height: 1.5px;
+    background: #000;
+}
+.contact__block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.contact__form input{
+    height: 35px;
+    border: 2px solid #000;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+.contact__form input::placeholder{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.contact__form textarea{
+    height: 150px;
+    border: 2px solid #000;
+    resize: none;
+    padding-left: 5px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.contact__form textarea::placeholder{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.contact__form input[type="submit"]{
+    height: 40px;
+    font-size: 14px;
+    color: #fff;
+    background: #000;
+    text-transform: uppercase;
+    width: 50%;
+    transition: .2s;
+}
+.contact__form input[type="submit"]:hover{
+    font-size: 16px;
+}
+.contact__list{
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 35px 0; 
+}
+.contact__list li{
+    cursor: pointer;
+}
+.contact__list li:hover{
+    text-decoration: underline;
+}
+.contact__list a{
+    font-weight: 300;
+    color: #000;
+    text-decoration: none;
+}
+.contact__icon{
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+@media screen and (min-width: 769px) {
+    .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact p{
+        max-width: 490px;
+        text-align: center;
+    }
+    .contact p span:after{
+        content:'';
+        display: block;
+        width: 150px;
+        height: 1.5px;
+        background: #000;
+        margin: 0 auto;
+    }
+    .contact__block{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        max-width: 660px;
+        margin-top: 40px;
+    }
+    .contact__list{
+        width: 40%; 
+        margin-top: 0;
+    }
+    .contact__list li{
+        margin: 15px 10px 15px 0;
+    }
+    .contact__list li:first-child{
+        margin: 0 10px 15px 0;
+    }
+    .contact__form{
+        width: 60%;
+    }
+}
