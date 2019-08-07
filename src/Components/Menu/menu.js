@@ -4,22 +4,36 @@ import Logo from '../../img/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
+
 class Menu extends Component {
     constructor() {
       super();
+        this.burger = React.createRef();
+        this.mouse = React.createRef();
         this.onClickHandler = this.onClickHandler.bind(this);
         this.mouseMove = this.mouseMove.bind(this);
       }
-      onClickHandler() {
-        document.getElementById("burger").checked = false;
+  
+      onClickHandler = () => {
+        const node = this.burger.current;
+        node.checked = false;
       }
+
       mouseMove = e =>{
-        const mouse = document.getElementById("mouse");
-        const text = document.getElementById("burger");
-        mouse.style.left = e.clientX+"px";
-        mouse.style.top = e.clientY+"px"; 
-        text.onmouseover = function() {
-          mouse.style.opacity = '0.2';
+        const node = this.mouse.current;
+        node.style.left = e.clientX+"px";
+        node.style.top = e.clientY+"px"; 
+        
+        node.onmouseover = () => {
+          node.style.opacity = '.5';
+          node.style.width = '50px';
+          node.style.height = '50px';
+          
+        };
+        node.onmouseout = () => {
+          node.style.opacity = '.1';
+          node.style.width = '70px';
+          node.style.height = '70px';
         };
       }
       render() {
@@ -38,16 +52,16 @@ class Menu extends Component {
         return (
             <nav className="menu" onMouseMove={this.mouseMove}>
               <div>
-                <a href="#home"><img className="menu__logo" src={Logo} alt="Logo"/></a>
+                <img className="menu__logo" src={Logo} alt="Logo"/>
               </div>
               <div className="menu__nav">
-                <input id="burger" type="checkbox" />
+                <input id="burger" ref={this.burger} type="checkbox"/>
                 <label htmlFor="burger" className="menu__burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </label>
-                <div id="mouse"></div>
+                <div id="mouse" ref={this.mouse}></div>
                 <ul className="menu__list" onClick={this.onClickHandler}>
                     {menulist}
                   </ul>

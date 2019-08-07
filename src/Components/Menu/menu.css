@@ -4,8 +4,9 @@
   width: 100%;
   overflow: hidden;
 }
-.menu #burger:checked{
+.menu__nav{
   cursor: none;
+  height: 0;
 }
 #burger:checked~#mouse{
   width: 50px;
@@ -16,7 +17,9 @@
   z-index: 2;
   opacity: .8;
   transform: translateX(-20px) translateY(-20px);
+  transition: opacity .5s, width .3s, height .3s;
 }
+
 .menu__logo{
   position: absolute;
   width: 70px;
@@ -106,6 +109,7 @@
   transition: .5s;
   transition-delay: 0s;
   z-index: -1;
+  list-style: none;
 }
 
 #burger:checked~.menu__list{
@@ -178,7 +182,10 @@
   font-size: 26px;
   transition: .15s;
 }
-
+.social__list a:hover {
+  font-size: 26px;
+  transition: .15s;
+}
 
 
 @media screen and (min-width: 768px) {
