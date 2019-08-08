@@ -1,9 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
+import {Form} from './form';
 import './contact.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 class Contact extends Component {
+    constructor() {
+        super();
+        this.state = {
+            name: '',
+            email:  '',
+            message: ''
+        };
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange = (e) => {
+        this.setState({[e.target.name]: e.target.value});
+    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const name = this.state.name;
+        const email = this.state.email;
+        const message = this.state.message;
+        document.location = "mailto:o.n.koplik@gmail.com?subject=Portfolio%20Email%20from%20"+name+"/"+email+"&body="+message;
+    }
     render(){
         const socialItems = this.props && this.props.social.map((item => 
             <li key={item.name}>
@@ -20,12 +42,7 @@ class Contact extends Component {
                 <ul className="contact__list">
                     {socialItems}
                 </ul>
-                <form className="contact__form">
-                    <input type="text" placeholder="name" required/>
-                    <input type="email" placeholder="email" required/>
-                    <textarea type="text" placeholder="message" required/>
-                    <input type="submit" value="send message"/>
-                </form>
+                <Form/>
             </div>
         </section>
         )
