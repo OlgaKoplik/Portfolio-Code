@@ -11,7 +11,7 @@ const Form=()=> {
     const sendMessage = (e) => {
         if (e) e.preventDefault();
         const message = inputs.message
-        const messageEnter = message.replace(/\r\n|\r|\n/g,"%0D%0A");
+        const messageEnter = message.replace(/\r\n|\r|\n/g,"%0D%0A").replace(' ',"%20");
         const request = "mailto:o.n.koplik@gmail.com?subject=Portfolio%20Email%20from%20"
             +inputs.name+"/"
             +inputs.email+"&body="
