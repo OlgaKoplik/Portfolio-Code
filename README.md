@@ -1,3 +1,3 @@
 Hello! 
-This is my Porftolio code, made with RaectJS.
+This is my ReactJS Porftolio code.
 
