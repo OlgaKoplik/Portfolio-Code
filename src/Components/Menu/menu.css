@@ -8,6 +8,9 @@
   cursor: none;
   height: 0;
 }
+#mouse{
+  display: none;
+}
 #burger:checked~#mouse{
   width: 50px;
   height: 50px;
@@ -18,13 +21,15 @@
   opacity: .8;
   transform: translateX(-20px) translateY(-20px);
   transition: opacity .5s, width .3s, height .3s;
+  display: block;
 }
 
 .menu__logo{
   position: absolute;
   width: 70px;
-  top: 5%;
+  top: 50%;
   left: 5%;
+  transform: translateY(-50%);
 }
 
 /*burger*/
@@ -39,6 +44,9 @@
   z-index: 3;
   right: 5%;;
   top: 5%;
+}
+#burger:checked+.menu__burger{
+  cursor: none;
 }
 #burger+.menu__burger span {
   position: absolute;
@@ -110,12 +118,14 @@
   transition-delay: 0s;
   z-index: -1;
   list-style: none;
+  display: none;
 }
 
 #burger:checked~.menu__list{
   opacity: 1;
   transition-delay: .5s;
   z-index: 3;
+  display: block;
 }
 .menu__list a {
   text-decoration: none;
@@ -176,7 +186,11 @@
 .social__list a{
   position: absolute;  
   color: white;
+  display: none;
+}
+#burger:checked~.social__list a{
   cursor: none;
+  display: block;
 }
 .social__list a:hover{
   font-size: 26px;

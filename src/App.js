@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
 import {Loading} from './Components/Loading/loading';
 import Menu from './Components/Menu/menu';
 import {Home} from './Home/home';
 import {Portfolio} from './Portfolio/portfolio';
 import Contact from './Contact/contact';
 import {Footer} from './Footer/footer';
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope as faEnvelopeRegular } from '@fortawesome/free-regular-svg-icons';
 import PropTypes from 'prop-types';
+import './App.css';
 
 library.add(
     fab,
@@ -30,14 +30,14 @@ const social = [
 ];
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
+  state = {
       isLoading: true,
-    }
-  }
+    };
+
   componentDidMount(){
-    this.isLoading = setTimeout(()=>{this.setState({isLoading: false})}, 2500); 
+    this.isLoading = setTimeout(()=>{
+      this.setState({isLoading: false,})}, 
+      2500); 
   }
   componentWillUnmount(){
     clearTimeout(this.isLoading);
@@ -47,7 +47,7 @@ class App extends Component {
     return (
       this.state.isLoading ? (<Loading/>)
       :(<div className="app">
-          <Menu social={social} menu={menu} className="menu"/>
+          <Menu social={social} menu={menu}/>
           <Home/>
           <Portfolio/>
           <Contact social={social}/>

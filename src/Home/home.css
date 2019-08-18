@@ -3,8 +3,9 @@
     align-items: flex-end;
     justify-content: center;
     height: 100vh;
-    animation: bg .4s ease;
+    animation: bg .8s ease;
 }
+
 @keyframes bg {
     0% {
         opacity: 0;
@@ -22,6 +23,13 @@
     font-size: 7rem;
     font-weight: 700;
 }
+
+h1{
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    font-weight: 300;
+    margin-top: 0;
+} 
 
 .home__img{
     display: block;
@@ -47,6 +55,9 @@
     }
     .home__hello{
         font-size: 10rem;
+    }
+    h1 {
+        font-size: 1.8em;
     }
     .home__img {
         max-width: 700px;

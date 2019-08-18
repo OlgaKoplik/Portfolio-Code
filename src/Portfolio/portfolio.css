@@ -9,6 +9,7 @@
 h2{
     font-size: 36px;
     font-weight: 500;
+    margin-bottom: 20px;
 }
 .portfolio__item iframe{
     height: 320px;
@@ -87,6 +88,7 @@ iframe{
 .portfolio__item a:hover::after{
     animation: go infinite .5s  ease ;
 }
+
 @keyframes go {
     0% {margin-left: 5px;}
     60% {margin-left: 15px;}
@@ -165,6 +167,7 @@ iframe{
         overflow: hidden;
     }
     .portfolio__works h2{
+        font-size: 3em;
         top: 3vh;
         position: absolute;
     }
@@ -223,9 +226,12 @@ iframe{
     .portfolio__descr {
         position: absolute;
         left: 7%;
-        top: 177vh;
-        max-width: 400px;
+        top: 190vh;
+        max-width: 500px;
         align-items: center;
+    }
+    .portfolio__descr h2{
+        display: none;
     }
     .portfolio__list--tools li{
         padding: 2vh;

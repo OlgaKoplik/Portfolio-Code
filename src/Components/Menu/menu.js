@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './menu.css';
 import Logo from '../../img/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import './menu.css';
 
 
 class Menu extends Component {
@@ -51,9 +51,7 @@ class Menu extends Component {
           </li>));
         return (
             <nav className="menu" onMouseMove={this.mouseMove}>
-              <div>
-                <img className="menu__logo" src={Logo} alt="Logo"/>
-              </div>
+              <a target="_blank" title="instagram.com/web__addict" href="https://www.instagram.com/web__addict/" rel="noopener noreferrer"><img className="menu__logo" src={Logo} alt="Logo"/></a>
               <div className="menu__nav">
                 <input id="burger" ref={this.burger} type="checkbox"/>
                 <label htmlFor="burger" className="menu__burger">
